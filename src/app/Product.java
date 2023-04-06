@@ -47,15 +47,14 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product: " +
                 "type='" + type + '\'' +
                 ", price=" + price +
                 ", Discount=" + discount +
-                ", AddDate=" + date +
-                '}';
+                ", AddDate=" + date  ;
     }
 
-    // 2
+ 
     public List<Product> getDiscountedBooks(List<Product> productList) {
         return productList.stream()
                 .filter(product -> product.getType().equals("Book") && product.isDiscount())
@@ -67,7 +66,7 @@ public class Product {
         return discount;
     }
 
-    // 3
+ 
     public Product getCheapBook(List<Product> productList) {
         Optional<Product> cheapestBook = productList.stream()
                 .filter(product -> product.getType().equals("Book"))
@@ -76,7 +75,7 @@ public class Product {
         return cheapestBook.orElseThrow(() -> new RuntimeException("Category Book not found"));
     }
 
-    // 4
+ 
     public List<Product> getLastThreeAddedProducts(List<Product> productList) {
         return productList.stream()
                 .sorted(Comparator.comparing(Product::getAddedDate).reversed())
@@ -88,7 +87,7 @@ public class Product {
         return date;
     }
 
-    // 5
+ 
     public double getTotalCostOfBooks(List<Product> productList) {
         LocalDate currentDate = LocalDate.now();
         return productList.stream()
@@ -99,7 +98,7 @@ public class Product {
                 .sum();
     }
 
-    // 6
+ 
     public Map<String, List<Product>> groupProductsByType(List<Product> productList) {
         return productList.stream().collect(Collectors.groupingBy(Product::getType));
     }
