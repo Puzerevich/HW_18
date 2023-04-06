@@ -19,6 +19,7 @@ public class Main {
                 new Product("Phone", 250,true, LocalDate.of(2012, 3, 12)),
                 new Product("Book", 280,true, LocalDate.of(2011, 11, 1)),
                 new Product("Book", 450,true, LocalDate.of(2010, 5, 21)),
+                new Product("Monitor", 1400,false, LocalDate.of(2023, 3, 1)),
                 new Product("Phone", 600,true, LocalDate.of(2009, 1, 1)),
                 new Product("Laptop", 550,false, LocalDate.of(2008, 1, 18)),
                 new Product("Book", 490,false, LocalDate.of(2007, 1, 1)),
@@ -32,7 +33,6 @@ public class Main {
                 new Product("Phone", 430,false, LocalDate.of(2000, 1, 1)),
                 new Product("Monitor", 130,false, LocalDate.of(2015, 2, 15))
         };
-
 
         Product product = new Product("", 0, false, LocalDate.now());
 
